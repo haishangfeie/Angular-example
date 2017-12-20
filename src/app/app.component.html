@@ -1,3 +1,5 @@
+<!--可以看到路径是数组的一个参数，除了路径，后面还可以传入其他参数-->
 <a [routerLink]="['/']" >主页</a>
 <a [routerLink]="['/product']" >商品详情</a>
+<input type="button" value="商品详情" (click)="toProductDetails()">
 <router-outlet></router-outlet>
