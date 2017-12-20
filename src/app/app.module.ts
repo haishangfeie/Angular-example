@@ -6,11 +6,12 @@ import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
 import { HomeComponent } from './home/home.component';
 import {RouterModule, Routes} from '@angular/router';
+import { Code404Component } from './code404/code404.component';
 
-const routes: Routes = [ // 这里存放着所有路线的集合，每条路线都用一个对象存放信息
-  // 对象最起码要有path和component这两个属性，path 表示路径，component表示满足路径时的组件
+const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'product', component: ProductComponent}  // 注意这里不用'/'开头，path不用斜杠开头，以后才能方便地使用相对路径和绝对路径
+  { path: 'product', component: ProductComponent},
+  { path: '**', component: Code404Component}
 ];
 
 
@@ -19,7 +20,8 @@ const routes: Routes = [ // 这里存放着所有路线的集合，每条路线�
   declarations: [
     AppComponent,
     ProductComponent,
-    HomeComponent
+    HomeComponent,
+    Code404Component
   ],
   imports: [
     BrowserModule,
