@@ -1,0 +1,38 @@
+<!-- 演示的是angular的内置指令-->
+
+<!--ngIf-->
+<div *ngIf="false">你能看见我吗？*ngIf="false"</div>             <!-- never displayed -->
+<div *ngIf="true">你能看见我吗？*ngIf="true"</div>
+
+<!--<div *ngIf="a > b"></div>             &lt;!&ndash; displayed if a is more than b &ndash;&gt;-->
+<!--<div *ngIf="str == 'yes'"></div>      &lt;!&ndash; displayed if str holds the string "yes" &ndash;&gt;-->
+<!--<div *ngIf="myFunc()"></div>          &lt;!&ndash; displayed if myFunc returns a true value &ndash;&gt;-->
+
+<br>
+<br>
+
+<!--ngSwitch-->
+<div class="container" [ngSwitch]="myVar">
+  <div *ngSwitchCase="'A'">Var is A</div>
+  <div *ngSwitchCase="'B'">Var is B</div>
+  <div *ngSwitchDefault>Var is something else</div>
+</div>
+
+<br>
+<br>
+
+<!--在下面这个例子中，当choice的值是2的时候，第2个和第5个li都会被渲染。-->
+<h4 class="ui horizontal divider header">
+  Current choice is {{ choice }}
+</h4>
+<div class="ui raised segment">
+  <ul [ngSwitch]="choice">
+    <li *ngSwitchCase="1">First choice</li>
+    <li *ngSwitchCase="2">Second choice</li>
+    <li *ngSwitchCase="3">Third choice</li>
+    <li *ngSwitchCase="4">Fourth choice</li>
+    <li *ngSwitchCase="2">Second choice, again</li>
+    <li *ngSwitchDefault>Default choice</li>
+  </ul>
+</div>
+
