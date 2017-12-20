@@ -1,8 +1,8 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { enableProdMode } from '@angular/core';    // 用来关闭开发者模式
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'; // 告知angular使用什么模块启动应用
 
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
+import { AppModule } from './app/app.module';  // 导入主模块
+import { environment } from './environments/environment';  // 导入环境配置
 
 if (environment.production) {
   enableProdMode();
